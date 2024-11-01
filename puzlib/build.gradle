@@ -1,10 +1,12 @@
 apply plugin: 'java'
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 group 'com.totsp.crossword'
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile group: 'junit', name: 'junit', version: '3.+'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation group: 'junit', name: 'junit', version: '3.+'
 
-    sourceCompatibility = 1.7
-    targetCompatibility = 1.7
+    java {
+        sourceCompatibility = 1.7
+        targetCompatibility = 1.7
+    }
 }
