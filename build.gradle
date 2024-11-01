@@ -19,7 +19,7 @@ allprojects {
             url 'https://oss.sonatype.org/content/groups/public'
         }
         maven {
-            url "http://dl.bintray.com/jenzz/maven"
+            url "https://dl.bintray.com/jenzz/maven"
         }
     }
     gradle.projectsEvaluated {
