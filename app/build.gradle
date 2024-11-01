@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-       google()
+        google()
         mavenCentral()
     }
 
@@ -9,6 +9,7 @@ buildscript {
         classpath 'com.google.firebase:firebase-crashlytics-gradle:2.2.0'
     }
 }
+
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
@@ -21,6 +22,7 @@ repositories {
 
 
 android {
+    namespace = "com.totsp.crossword"
     Properties props = new Properties()
 
     def propsPath = System.getProperty("user.home") + "/androidkeyinfo.properties"
