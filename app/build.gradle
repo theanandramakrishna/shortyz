@@ -30,8 +30,7 @@ android {
     if (new File(propsPath).exists())
         props.load(new FileInputStream(propsPath))
 
-    compileSdkVersion 29
-    //buildToolsVersion "29.0.2"
+    compileSdkVersion 34
 
     buildFeatures {
         buildConfig true
@@ -42,9 +41,9 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 27
-        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+        minSdkVersion 19
+        targetSdkVersion 30
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
 
@@ -109,8 +108,9 @@ dependencies {
     implementation ('com.google.apis:google-api-services-gmail:v1-rev29-1.20.0'){
         exclude group: 'org.apache.httpcomponents'
     }
-    androidTestImplementation 'com.jayway.android.robotium:robotium-solo:4.3.1'
-    androidTestImplementation "androidx.test.ext:junit:1.1.1"
+    androidTestImplementation "androidx.test:runner:1.6.2"
+    androidTestImplementation "androidx.test:rules:1.6.1"
+    androidTestImplementation "androidx.test.uiautomator:uiautomator:2.3.0"
     implementation 'com.squareup.okhttp3:okhttp:3.2.0'
     implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
     implementation 'com.google.firebase:firebase-crashlytics:17.1.0'

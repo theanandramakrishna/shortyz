@@ -20,6 +20,7 @@ Compilation
 
 See [issue #46](https://github.com/kebernet/shortyz/issues/46).
 
+
 Project Structure
 -----------------
 
@@ -28,7 +29,25 @@ Project Structure
   * ./web A GWT/AppEngine web app for Shortyz that has fallen into disrepair.
   * ./gfx Art assets related to the Play Store publishing
 
+Testing
+-------
+Download system images 
+```    $ sdkmanager "system-images;android-29;google_apis;x86_64"
 
+Create an avd
+```    $ avdmanager create avd -n p6 -k "system-images;android-29;google_apis;x86_64" -d "pixel_6"
+
+Start the emulator 
+```    $ emulator @p6
+
+Run automated tests
+```    $ ./gradlew connectedCheck
+
+(Optionally) To manually load the apk and test apk into the emulator using adb and run tests
+```    $ adb -e install app/build/outputs/apk/debug/app-debug.apk
+```    $ adb -e install app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+```    $ adb shell
+```    $ am instrument -w com.totsp.crossword.shortyz.test/androidx.test.runner.AndroidJUnitRunner
 
 License
 -------

@@ -1,10 +1,8 @@
 package com.totsp.crossword.shortyz.test;
-;
 
-import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import androidx.test.runner.AndroidJUnit4;
 import com.totsp.crossword.net.AbstractPageScraper;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -39,7 +37,7 @@ public class PageScraperTest  {
 	private static class TestScraper extends AbstractPageScraper {
 		
 		TestScraper(){
-			super("http://www.fleetwoodwack.typepad.com/", "BEQ");
+			super("https://www.fleetwoodwack.typepad.com/", "BEQ");
 		}
 	}
 

@@ -1,0 +1,7 @@
+fix warnings
+fix google play warning
+rename app
+add tests for app ui
+add support for loading puz files by .puz extension
+add support for download of cryptics
+add support for loading of puz files by url

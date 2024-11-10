@@ -43,6 +43,7 @@
         <activity
             android:name="com.totsp.crossword.HttpDownloadActivity"
             android:label="Download to Shortyz"
+            android:exported="true"
             android:configChanges="orientation">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -58,25 +59,153 @@
         </activity>
         <activity
             tools:ignore="UnusedAttribute"
+            android:exported="true"
             android:name="com.totsp.crossword.PlayActivity"
             android:hardwareAccelerated="false"
             android:configChanges="keyboard|keyboardHidden|orientation"
             android:label="@string/app_name"
             android:theme="@style/Theme.Shortyz">
+<!--
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.EDIT" />
-
+                <category android:name="android.intent.category.OPENABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
                     android:host="*"
-                    android:pathPattern="/.*\\.puz"
+                    android:pathPattern=".*\\.puz"  
+                    android:mimeType="*/*"
                     android:scheme="file" />
+                <data
+                    android:host="*"
+                    android:pathPattern=".*\\.puz"  
+                    android:mimeType="*/*"
+                    android:scheme="content" />
+               
+
                 <data
                     android:mimeType="application/x-crossword"
                     android:scheme="file" />
             </intent-filter>
+-->
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:scheme="content" />
+
+                <data
+                    android:pathPattern=".*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\..*\..*\..*\.puz" />
+
+                <data
+                    android:mimeType="application/octet-stream" />
+
+                <data
+                    android:mimeType="application/x-crossword" />
+            </intent-filter>
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.BROWSABLE" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:scheme="http" />
+
+                <data
+                    android:host="*" />
+
+                <data
+                    android:pathPattern=".*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\..*\..*\..*\.puz" />
+            </intent-filter>
+            <intent-filter>
+
+                <action
+                    android:name="android.intent.action.VIEW" />
+
+                <category
+                    android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:scheme="file" />
+
+                <data
+                    android:pathPattern=".*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\..*\..*\.puz" />
+
+                <data
+                    android:pathPattern=".*\..*\..*\..*\..*\..*\..*\.puz" />
+
+                <data
+                    android:mimeType="application/octet-stream" />
+
+                <data
+                    android:mimeType="application/x-crossword" />
+            </intent-filter>
+
+
         </activity>
         <activity
             android:name="com.totsp.crossword.SettingsActivity"
@@ -98,6 +227,7 @@
             android:name="com.totsp.crossword.BrowseActivity"
             android:label="@string/app_name"
             android:configChanges="orientation"
+            android:exported="true"
             android:theme="@style/Theme.Shortyz">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -115,7 +245,9 @@
             android:label="Puzzle Completed!"
             android:theme="@style/Theme.AppCompat.Dialog"/>
 
-        <receiver android:name="com.totsp.crossword.net.DownloadReceiver">
+        <receiver 
+            android:name="com.totsp.crossword.net.DownloadReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
             </intent-filter>
