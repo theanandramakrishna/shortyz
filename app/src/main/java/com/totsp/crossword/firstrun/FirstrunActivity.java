@@ -55,6 +55,7 @@ public class FirstrunActivity extends AppIntro {
 
     @Override
     public void onSkipPressed() {
+        LOGGER.warning("xxxxxxxxxxxxxxxxxxxxx");
         ((ShortyzApplication) getApplication()).getSettings().edit().putBoolean("didFirstRun", true).apply();
         Intent i = new Intent(Intent.ACTION_VIEW, null, this, BrowseActivity.class);
         startActivity(i);
