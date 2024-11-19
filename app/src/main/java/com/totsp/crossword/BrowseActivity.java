@@ -847,7 +847,8 @@ public class BrowseActivity extends ShortyzActivity implements RecyclerItemClick
         directory.mkdirs();
         //Only spawn a thread if there are a lot of puzzles.
         // Using SDK rev as a proxy to decide whether you have a slow processor or not.
-
+        LOGGER.info("qqqqqqqqqqqqqqqqqq");
+        LOGGER.info(directory.getAbsolutePath());
         if (((android.os.Build.VERSION.SDK_INT >= 5) && directory.exists() && (directory.list().length > 500)) ||
                 ((android.os.Build.VERSION.SDK_INT < 5) && directory.exists() && (directory.list().length > 160))) {
             Runnable r = new Runnable() {
